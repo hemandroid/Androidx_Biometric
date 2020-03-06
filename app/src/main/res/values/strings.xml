@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Androidx_Biometric</string>
+    <string name="action_settings">Settings</string>
+    <string name="check_your_fingerprint_status">Check your fingerprint status</string>
+</resources>

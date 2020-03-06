@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion compileSdkVer
+    buildToolsVersion buildToolsVersion
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+        applicationId "com.hemandroid.androidx_biometric"
+        minSdkVersion minSdkVer
+        targetSdkVersion targetSdkVer
+        versionCode versionCode
+        versionName versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+    dataBinding{
+        enabled = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.appcompat:appcompat:$appcompatVer"
+    implementation "androidx.core:core-ktx:$core_ktx"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout"
+    implementation "com.google.android.material:material:$material"
+    // Biometric authentication dependency
+    implementation "androidx.biometric:biometric:$biometric"
+    testImplementation "junit:junit:$jUnit"
+    androidTestImplementation "androidx.test.ext:junit:$ext_junit"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_core"
+}
